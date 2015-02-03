@@ -305,10 +305,12 @@ LeafletGeomVisualizer.prototype._updateBillboard = function(entity, time) {
             if (!defined(iconOptions.iconSize)) {
                 iconOptions.iconSize = [image.width * scale, image.height * scale];
             }
-            var w = iconOptions.iconSize[0], h = iconOptions.iconSize[1];
+//            var w = iconOptions.iconSize[0], h = iconOptions.iconSize[1];
             var xOff = (w/2)*(1-horizontalOrigin) - pixelOffset.x;
             var yOff = (h/2)*(1+verticalOrigin) - pixelOffset.y;
-            iconOptions.iconAnchor = [xOff, yOff];
+//            iconOptions.iconAnchor = [xOff, yOff];
+            //THIS WILL NOT APPEAR IN LEAFLET SHARE (HTML2CANVAS) BECAUSE THE ANCHOR CREATES NEGATIVE MARGINS
+            //  UNCLEAR HOW TO FIX AT THIS POINT
 
             if (!color.equals(defaultColor)) {
                 iconOptions.iconUrl = recolorBillboard(image, color);
